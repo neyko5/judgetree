@@ -1,14 +1,14 @@
 <table id="judges"  class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Picture</th>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Father</th>
-      <th>Country</th>
-      <th>Tree</th>
+      <th><%=t("picture")%></th>
+      <th><%=t("name")%></th>
+      <th><%=t("level")%></th>
+      <th><%=t("father")%></th>
+      <th><%=t("country")%></th>
+      <th><%=t("tree")%></th>
       <th>DCI</th>
-      <th>Options</th>
+      <th><%=t("options")%></th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,7 @@
         <td><%= j.country_string %></td>
         <td><%= j.tree_string %></td>
         <td><%= j.dci %></td>
-        <td><%= link_to "Edit", edit_judge_path(j.id), :class => "edit"  %><%= link_to "Delete", judge_path(j.id), :method => :delete,:class => "delete"  %></td>
+        <td><%= link_to "Edit", edit_judge_path(j.id), :class => "edit"  %><%= link_to t('Delete'), judge_path(j.id), :method => :delete,:class => "delete"  %></td>
       <%end%>
     </tr>
   <%end%>

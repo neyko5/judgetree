@@ -1,6 +1,6 @@
 <%=form_for @judge, html: {class: "form-horizontal col-sm-8", role: "form"} do |f|%>
 <div class="form-group">
-  <%=f.label :name, class: "col-sm-2 control-label"%>
+  <%=f.label t(:name), class: "col-sm-2 control-label"%>
   <div class="col-sm-6">
     <%=f.text_field :name, class: 'form-control' %>
   </div>
@@ -12,32 +12,32 @@
   </div>
 </div>
 <div class="form-group">
-  <%=f.label :level, class: "col-sm-2 control-label" %>
+  <%=f.label t(:level), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
     <%= select_tag 'judge[level]', options_for_select(Judge.levels),{class: 'form-control'} %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :father, class: "col-sm-2 control-label" %>
+  <%= f.label t(:father), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
     <%= select_tag 'judge[parent_judge_id]', options_for_select(@judges.collect{|f| [f.name, f.id]}),{prompt: 'Father', class: 'form-control'} %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :country, class: "col-sm-2 control-label" %>
+  <%= f.label t(:country), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
     <%= select_tag 'judge[country]', options_for_select(@countries, 'BR'),{prompt: 'Country', class: 'form-control', selected: 'br'} %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :country, class: "col-sm-2 control-label" %>
+  <%= f.label t(:country_tree), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
     <%= select_tag 'judge[country_tree]', options_for_select(@countries, 'BR'),{prompt: 'Which tree?', class: 'form-control', selected: 'br'} %>
   </div>
 </div>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-6">
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn btn-primary"><%= t("Create") %></button>
   </div>
 </div>
 <% end %>

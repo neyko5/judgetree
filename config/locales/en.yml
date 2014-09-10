@@ -27,5 +27,15 @@ en:
   new_judge: "New Judge"
   log_out: "Log out"
   log_in: "Log in"
-  level: "Level: "
+  level: "Level"
+  options: "Options"
+  name: "Name"
+  father: "Father"
+  country: "Country"
+  tree: "Tree"
+  country_tree: "Tree"
+  edit: "Edit"
+  update: "Update"
+  judge_tree: "Judge tree"
+
 
