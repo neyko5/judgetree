@@ -1,0 +1,6 @@
+<div class="page-header">
+  <h1><%= @country.name %> judge tree <small>(<%=@judge_count%></span> <%=t :Judges %>)</small></h1>
+</div>
+
+<div id="tree"></div>
+<%= render_chart(@chart, 'tree') %>

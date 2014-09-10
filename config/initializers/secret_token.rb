@@ -1,0 +1,1 @@
+JudgesBrFamilyTree::Application.config.secret_token = 'uhAISHaiuhs28e89292ehowejalsDHADBKASY38932978937'

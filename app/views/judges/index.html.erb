@@ -1,0 +1,30 @@
+<table id="judges"  class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Father</th>
+      <th>Country</th>
+      <th>Tree</th>
+      <th>DCI</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@judges.each do |j|%>
+    <tr>
+      <%= form_for j do |f|%>
+        <td><img class="small_profile" src="http://apps.magicjudges.org/dci/avatar?dci=<%= j.dci_number %>&size=40" /></td>
+        <td><%= j.name%></td>
+        <td><%= j.level_to_short %></td>
+        <td><%= j.parent_name %></td>
+        <td><%= j.country_string %></td>
+        <td><%= j.tree_string %></td>
+        <td><%= j.dci %></td>
+        <td><%= link_to "Edit", edit_judge_path(j.id), :class => "edit"  %><%= link_to "Delete", judge_path(j.id), :method => :delete,:class => "delete"  %></td>
+      <%end%>
+    </tr>
+  <%end%>
+  </tbody>
+</table>

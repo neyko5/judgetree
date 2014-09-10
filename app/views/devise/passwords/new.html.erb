@@ -1,0 +1,17 @@
+<h2>Forgot your password?</h2>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name),html: {class: "form-horizontal col-sm-8", role: "form", method: :post}) do |f| %>
+<%= devise_error_messages! %>
+<div class="form-group">
+  <%=f.label :email, class: "col-sm-2 control-label"%>
+  <div class="col-sm-6">
+    <%=f.text_field :email, autofocus: true,  class: 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <button type="submit" class="btn btn-primary">Send me reset password instructions</button>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+<% end %>
+

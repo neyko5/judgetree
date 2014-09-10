@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%=t :web_title %></title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+  <link href='//cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+  <meta property="og:title" content="<%=t :web_title %>"/>
+  <meta property="og:url" content="<%=root_url%>"/>
+  <meta property="og:site_name" content="Juízes Magic Brasil"/>
+  <meta property="og:image" content="<%=asset_url('tree.jpg') %>"/>
+  <meta property="og:description" content="<%=t :web_description %>"/>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <%=link_to t('judges_comunity'), root_path, class:'navbar-brand' %>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li>
+            <%=link_to t('new_judge'), new_judge_path%>
+          </li>
+          <li>
+            <%=link_to t('judges'), judges_path, method: :get %>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%=link_to t('log_out'), destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+        <%else%>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%=link_to t('log_in'), new_user_session_path %>
+          </li>
+        </ul>
+        <% end %>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+    <%if flash[:error] %>
+    <div class='bs-callout bs-callout-warning'>
+      <h4><%=flash[:error]%></h4>
+    </div>
+    <% end %>
+    <%if flash[:notice] %>
+    <div class='bs-callout bs-callout-info'>
+      <h4><%=flash[:notice]%></h4>
+    </div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+  <%= yield :javascript %>
+</body>
+</html>
