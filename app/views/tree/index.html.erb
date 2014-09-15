@@ -1,11 +1,11 @@
 <div class="page-header">
-  <h1>Judge trees by country <small>(<%=@total_judge_count%></span> <%=t :Judges %>)</small></h1>
+  <h1><%= t(:trees_by_country) %> <small>(<%=@total_judge_count%></span> <%= t(:judges) %>)</small></h1>
 </div>
 
 <div id="tree"></div>
 <% @counts.each do |country| %>
 	<a href="/tree/<%= country.alpha2.downcase %>" class="country-tree">
-  		<img src="/assets/flags/<%= country.alpha2.downcase %>.png">
+  		<img src="/assets/flags/<%= country.alpha2%>.png">
   		<h2><%=country.name%></h2>
   	</a>
 <% end %>

@@ -20,7 +20,7 @@
 <div class="form-group">
   <%= f.label t(:father), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
-    <%= f.select :parent_judge_id, options_for_select(@judges.collect{|j| [j.name+" ("+j.level+")", j.id]}),{class: 'form-control', prompt: t("Father")} %>
+    <%= f.select :parent_judge_id, options_for_select(@judges.collect{|j| [j.name+" ("+j.level+" - "+j.tree_string+")", j.id]}),{class: 'form-control', prompt: t("Father")} %>
   </div>
 </div>
 <div class="form-group">

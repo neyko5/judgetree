@@ -37,5 +37,9 @@ en:
   edit: "Edit"
   update: "Update"
   judge_tree: "Judge tree"
+  inactive: "Inactive"
+  judge_created: "Judge created"
+  judge_error: "Error creating judge"
+  trees_by_country: "Judge tree by country"
 
 

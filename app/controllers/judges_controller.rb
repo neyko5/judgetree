@@ -7,9 +7,9 @@ class JudgesController < ApplicationController
   def create
     @judge = Judge.new(judge_params)
     if @judge.save
-      redirect_to :root, notice: 'Juiz criado'
+      redirect_to :root, notice: I18n.t("judge_created")
     else
-      flash[:error] = "Erro ao criar Juiz"
+      flash[:error] = I18n.t("judge_error")
       render 'new'
     end
   end

@@ -20,10 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  web_title: "Arbol Genealogico de Jueces de Magic"
+  web_title: "Arboles Genealogicos Latino Americanos"
   web_description: "Elige tu pais"
   judges: "Jueces"
-  judges_comunity: "Arbol Genealico de juecea de Latino America "
+  judges_comunity: "Arboles Genealogicos Latino Americanos"
   new_judge: "Nuevo Juez"
   log_out: "Cerrar Sesion"
   log_in: "Iniciar Sesion"
@@ -37,3 +37,5 @@ en:
   edit: "Editar"
   update: "Actualizar"
   judge_tree: "Arbol de Juez"
+  inactive: "Inactivo"
+  trees_by_country: "Arboles Genealogicos por pais"

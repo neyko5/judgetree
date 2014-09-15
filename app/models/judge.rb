@@ -18,7 +18,7 @@ class Judge
 
 
   def self.levels
-    ["1", "2", "3", "4", "5", "Inativo", "Emeritus"]
+    ["1", "2", "3", "4", "5", I18n.t(:inactive), "Emeritus"]
   end
 
   def level_to_word
@@ -39,13 +39,15 @@ class Judge
 
 
   def level_output
-    if level == "Inativo" || level == "Emeritus"
-      level
+    if level == "Inativo"
+      I18n.t("inactive")
+    elseif level == "Emeritus"
+      "Emeritus"
     else
-      #t(:level) #{level}
-      "Nivel #{level}"
+      t(:level)+" level"
     end
   end
+
   def name_output
     name_parts = name.split(' ')
     if name_parts.count > 2
