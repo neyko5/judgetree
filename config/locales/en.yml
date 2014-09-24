@@ -41,5 +41,7 @@ en:
   judge_created: "Judge created"
   judge_error: "Error creating judge"
   trees_by_country: "Judge tree by country"
+  l2_certificator: "L2 Certificator"
+  l3_certificator: "L3 Certificator"
 
 

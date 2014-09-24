@@ -6,6 +6,9 @@ class Judge
   field :country, default: 'br'
   field :country_tree
   field :dci
+  field :l2_cert
+  field :l3_cert
+
 
   has_many :child_judges, :class_name => 'Judge', inverse_of: :parent_judge
   belongs_to :parent_judge, :class_name => 'Judge', inverse_of: :child_judges

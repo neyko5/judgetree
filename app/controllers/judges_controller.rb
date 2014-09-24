@@ -35,7 +35,7 @@ class JudgesController < ApplicationController
   private
 
   def judge_params
-    params.require(:judge).permit(:name, :level, :parent_judge_id, :country,:country_tree,:dci)
+    params.require(:judge).permit(:name, :level, :parent_judge_id, :country,:country_tree,:dci,:l2_cert,:l3_cert)
   end
 
   def load_info
