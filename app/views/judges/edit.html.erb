@@ -14,13 +14,13 @@
 <div class="form-group">
   <%=f.label t(:level), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
-    <%= f.select :level, options_for_select(Judge.levels),{class: 'form-control'} %>
+    <%= f.select :level, options_for_select(Judge.levels,@judge.level),{class: 'form-control'} %>
   </div>
 </div>
 <div class="form-group">
   <%= f.label t(:father), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
-    <%= f.select :parent_judge_id, options_for_select(@judges.collect{|j| [j.name+" ("+j.level+" - "+j.tree_string+")", j.id]}),{class: 'form-control', prompt: t("Father")} %>
+    <%= f.select :parent_judge_id, options_for_select(@judges.collect{|j| [j.name+" ("+j.level+" - "+j.tree_string+")", j.id]},@judge.parent_judge_id),{class: 'form-control', prompt: t("Father")} %>
   </div>
 </div>
 <div class="form-group">

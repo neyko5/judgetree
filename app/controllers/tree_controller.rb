@@ -37,7 +37,7 @@ class TreeController < ApplicationController
         @string+="<div class='certifier'><div class='cert-label'>#{t(:l2_certificator)}</div><div class='cert-name'>#{j.l2_cert}</div></div>";
       end
 
-      if(!j.l3_cert.blank?)
+      if(!j.l3_cert.blankc?)
         @string+="<div class='certifier'><div class='cert-label'>#{t(:l3_certificator)}</div><div class='cert-name'>#{j.l3_cert}</div></div>";
       end
 

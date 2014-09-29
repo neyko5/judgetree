@@ -21,7 +21,7 @@ class Judge
 
 
   def self.levels
-    ["1", "2", "3", "4", "5", I18n.t(:inactive), "Emeritus"]
+    ["1","2", "3", "4", "5", I18n.t(:inactive), "Emeritus"]
   end
 
   def level_to_word
