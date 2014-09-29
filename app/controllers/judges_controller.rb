@@ -19,6 +19,8 @@ class JudgesController < ApplicationController
   def update
     @judge = Judge.find(params[:id])
     @judge.update_attributes(judge_params)
+    session[:last_country]=judge_params[:country];
+    session[:last_tree]=judge_params[:country_tree];
     redirect_to judges_path
   end
 

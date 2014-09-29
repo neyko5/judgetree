@@ -3,7 +3,7 @@ class Judge
 
   field :name
   field :level
-  field :country, default: 'br'
+  field :country
   field :country_tree
   field :dci
   field :l2_cert

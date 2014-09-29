@@ -26,13 +26,13 @@
 <div class="form-group">
   <%= f.label t(:country), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
-    <%= select_tag 'judge[country]', options_for_select(@countries, 'BR'),{prompt: 'Country', class: 'form-control', selected: 'br'} %>
+    <%= select_tag 'judge[country]', options_for_select(@countries,session[:last_country]),{prompt: 'Country', class: 'form-control', selected: 'br'} %>
   </div>
 </div>
 <div class="form-group">
   <%= f.label t(:country_tree), class: "col-sm-2 control-label" %>
   <div class="col-sm-6">
-    <%= select_tag 'judge[country_tree]', options_for_select(@countries, 'BR'),{prompt: 'Which tree?', class: 'form-control', selected: 'br'} %>
+    <%= select_tag 'judge[country_tree]', options_for_select(@countries, session[:last_tree]),{prompt: 'Which tree?', class: 'form-control', selected: 'br'} %>
   </div>
 </div>
 <div class="form-group">
@@ -52,4 +52,5 @@
     <button type="submit" class="btn btn-primary"><%= t("Create") %></button>
   </div>
 </div>
+<%= session.inspect %>
 <% end %>
