@@ -2,6 +2,11 @@ class JudgesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_info
   def new
+    if(session.has_key?(:last_country))
+      @last_country=session[:last_country];
+      @last_tree=session[:last_tree];
+    end
+
     @judge = Judge.new
   end
   def create

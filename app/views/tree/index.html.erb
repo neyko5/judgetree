@@ -4,8 +4,8 @@
 
 <div id="tree"></div>
 <% @counts.each do |country| %>
-	<a href="/tree/<%= country.alpha2.downcase %>" class="country-tree">
-  		<img src="/assets/flags/<%= country.alpha2%>.png">
-  		<h2><%=country.name%></h2>
+	<a href="/tree/<%= country[:alpha2].downcase %>" class="country-tree">
+  		<img src="/assets/flags/<%= country[:alpha2] %>.png">
+  		<h2><%=country[:name] %></h2>
   	</a>
 <% end %>

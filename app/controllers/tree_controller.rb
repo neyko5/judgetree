@@ -5,7 +5,23 @@ class TreeController < ApplicationController
     @countries.sort!
     @counts=Array.new;
     @countries.each do |country|
-    	@counts.push IsoCountryCodes.find(country)
+
+
+      @cnt=IsoCountryCodes.find(country)
+
+
+      @cntobj={name:@cnt.name,alpha2:@cnt.alpha2}
+
+
+      if (@cntobj[:name]=="Bolivia, Plurinational State of")
+        @cntobj[:name]="Bolivia"
+      end
+
+      if (@cntobj[:name]=="Venezuela, Bolivarian Republic of")
+        @cntobj[:name]="Venezuela"
+      end
+
+    	@counts.push @cntobj
     end
   end
 
@@ -37,7 +53,7 @@ class TreeController < ApplicationController
         @string+="<div class='certifier'><div class='cert-label'>#{t(:l2_certificator)}</div><div class='cert-name'>#{j.l2_cert}</div></div>";
       end
 
-      if(!j.l3_cert.blankc?)
+      if(!j.l3_cert.blank?)
         @string+="<div class='certifier'><div class='cert-label'>#{t(:l3_certificator)}</div><div class='cert-name'>#{j.l3_cert}</div></div>";
       end
 
